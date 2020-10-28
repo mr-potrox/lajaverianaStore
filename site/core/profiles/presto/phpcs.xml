@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ruleset name="Sitback">
+
+  <description>Sitback's Drupal 8 coding standards.</description>
+
+  <!-- Use local Drupal coding standards. -->
+  <config name="installed_paths" value="vendor/drupal/coder/coder_sniffer" />
+
+  <!-- Code. -->
+  <file>./src</file>
+  <file>./modules</file>
+
+  <!-- Tests. -->
+  <file>./tests</file>
+
+  <!-- Exclude compiled JS. -->
+  <exclude-pattern>*/js/compiled/*</exclude-pattern>
+
+  <!-- Drupal's PHP & JS files -->
+  <arg name="extensions" value="php,module,inc,install,test,profile,theme,js" />
+
+  <rule ref="Drupal" >
+    <exclude name="Drupal.Commenting.InlineComment.DocBlock" />
+  </rule>
+  <rule ref="DrupalPractice" />
+
+</ruleset>

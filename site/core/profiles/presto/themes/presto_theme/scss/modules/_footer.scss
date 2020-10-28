@@ -1,0 +1,36 @@
+.footer {
+  margin-top: 2em;
+  padding-top: 35px;
+  padding-bottom: 36px;
+  background: $footerBackground;
+  border-top: 2px solid $footerBorderColor;
+
+  .region-footer-fifth {
+    @extend .container;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    a, p, h2, h3, h4, h5, h6 {
+      color: $footerLinkColor;
+    }
+
+    nav {
+
+      li {
+        line-height: 3;
+
+        > a {
+          color: $footerLinkColor;
+          padding: 0;
+
+          &:focus,
+          &:hover {
+            color: $footerLinkColorHover;
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.component_image.field_caption
+    - field.field.paragraph.component_image.field_link
+    - field.field.paragraph.component_image.field_media
+    - field.field.paragraph.component_image.field_variation
+    - paragraphs.paragraphs_type.component_image
+  module:
+    - link
+    - options
+id: paragraph.component_image.preview
+targetEntityType: paragraph
+bundle: component_image
+mode: preview
+content:
+  field_caption:
+    type: basic_string
+    weight: 0
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_variation:
+    type: list_default
+    weight: 2
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_media: true

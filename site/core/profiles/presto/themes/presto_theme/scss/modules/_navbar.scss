@@ -1,0 +1,98 @@
+
+.navbar {
+  border-bottom: 0;
+  margin-bottom: 0;
+  background: $mainMenuBackground;
+  border-bottom: 2px solid $mainMenuBorderColor;
+
+  &.navbar-light {
+    .navbar-brand {
+      display: flex;
+      align-content: flex-start;
+
+      .site-logo {
+        img {
+          display: block;
+          width: auto;
+          height: 1.325rem;
+          padding: 2px 15px;
+          box-sizing: content-box;
+        }
+      }
+    }
+
+    .site-name-slogan {
+      display: block;
+      color: $boulder;
+      padding: 10px;
+    }
+  }
+
+  .navbar-nav {
+    > .nav-item {
+      &.active {
+        > a.nav-link {
+          color: $mainMenuLinkColorHover;
+          border-bottom-color: $mainMenuLinkBorderColorActive;
+        }
+      }
+
+      > a.nav-link {
+        color: $mainMenuLinkColor;
+        border-bottom: 2px solid $mainMenuLinkBorderColor;
+        margin-bottom: -2px;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+        box-sizing: content-box;
+        text-align: center;
+        font-size: 14px;
+
+        @include media-breakpoint-up(md) {
+          text-align: left;
+        }
+
+        &:hover {
+          color: $mainMenuLinkColorHover;
+          border-bottom-color: $mainMenuLinkBorderColorHover;
+          background: $mainMenuBackgroundHover;
+        }
+      }
+    }
+  }
+}
+
+.navbar-right {
+  @include media-breakpoint-up(md) {
+    margin-right: 0;
+  }
+}
+
+.navbar-collapse {
+  overflow: hidden;
+
+  .container-fluid & {
+    margin: 0;
+
+    @include media-breakpoint-up(md) {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+  }
+}
+
+.navbar-text {
+  font-size: 14px;
+}
+
+.region-navigation,
+.region-navigation-collapsible {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+.region-navigation {
+  width: 100%;
+}

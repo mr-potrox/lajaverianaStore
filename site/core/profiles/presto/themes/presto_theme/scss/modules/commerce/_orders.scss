@@ -1,0 +1,29 @@
+
+
+.table {
+  thead {
+
+    th {
+      @extend h4;
+    }
+  }
+
+
+  tbody {
+
+    td {
+
+      &.views-field-total-price__number {
+        @extend h4;
+      }
+
+      .Canceled {
+        color: $orderCanceledTextColor;
+      }
+
+      .Completed {
+        color: $orderCompletedTextColor;
+      }
+    }
+  }
+}

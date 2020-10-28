@@ -1,0 +1,14 @@
+a {
+  color: $linkColor;
+
+  &:hover {
+    color: $linkColorHover;
+    text-decoration: none;
+  }
+}
+
+.alert {
+  a {
+    text-decoration: underline;
+  }
+}

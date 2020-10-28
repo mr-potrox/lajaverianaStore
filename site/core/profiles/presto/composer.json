@@ -1,0 +1,174 @@
+{
+    "name": "sitback/presto",
+    "description": "A magical way to start Drupal by Sitback.",
+    "type": "drupal-profile",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Imon Hoque",
+            "email": "imon@sitback.com.au"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "package": "Drupal\\presto\\Composer\\Package::execute",
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-install-cmd": [
+            "@composer drupal-scaffold"
+        ],
+        "post-update-cmd": [
+            "@composer package"
+        ],
+        "dev-update": [
+            "@composer update",
+            "rm -rf web/"
+        ]
+    },
+    "require": {
+        "php": ">=5.5",
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "drupal/admin_toolbar": "^1.19",
+        "drupal/big_pipe_sessionless": "^1.0",
+        "drupal/block_field": "^1.0@alpha",
+        "drupal/bootstrap": "^3.5",
+        "drupal/commerce": "^2.0",
+        "drupal/commerce_shipping": "^2.0@beta",
+        "drupal/bootstrap_barrio": "^4.6",
+        "drupal/contact_block": "^1.4",
+        "drupal/contact_storage": "^1.0@beta",
+        "drupal/core": "8.*",
+        "drupal/dropzonejs": "^2.0@alpha",
+        "drupal/ds": "^3.0",
+        "drupal/entity_browser": "^2.0@alpha",
+        "drupal/focal_point": "1.x-dev",
+        "drupal/google_analytics": "^2.1",
+        "drupal/memcache": "^2.0@alpha",
+        "drupal/metatag": "^1.0",
+        "drupal/paragraphs": "^1.1",
+        "drupal/pathauto": "^1.0",
+        "drupal/physical": "^1.0@RC",
+        "drupal/redirect": "^1.0@beta",
+        "drupal/simple_sitemap": "^2.9",
+        "drupal/slick": "1.x-dev",
+        "drupal/social_media": "^1.2",
+        "drupal/social_media_links": "2.x",
+        "drupal/token": "^1.0",
+        "drupal/video_embed_field": "^2.0",
+        "drupal/view_mode_selector": "1.x-dev",
+        "drupal/swiftmailer": "^1.0@beta",
+        "swiftmailer/swiftmailer": "^5.4.8",
+        "npm-asset/blazy": "^1",
+        "npm-asset/dropzone": "^4",
+        "npm-asset/slick-carousel": "^1",
+        "drupal/views_bulk_operations": "^2.4",
+        "drupal/entity_embed": "^1.0@beta",
+        "drupal/media_entity_slideshow": "2.0-alpha1",
+        "drupal/slick_media": "2.0-alpha1"
+    },
+    "require-dev": {
+        "behat/mink": "~1.7",
+        "behat/mink-goutte-driver": "~1.2",
+        "composer/composer": "^1.4",
+        "drupal-composer/drupal-security-advisories": "8.x-dev",
+        "drupal/coder": "^8.2",
+        "drupal/console": "~1.0",
+        "drupal/link_css": "1.x-dev#2e53337",
+        "drush/drush": "~8.0",
+        "jcalderonzumba/gastonjs": "~1.0.2",
+        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+        "mikey179/vfsstream": "~1.2",
+        "phpro/grumphp": "^0.11.5",
+        "phpunit/phpunit": ">=4.8.28 <5",
+        "sensiolabs/security-checker": "^4.0",
+        "symfony/css-selector": "~2.8",
+        "webflo/drupal-finder": "^0.3.0",
+        "webmozart/path-util": "^2.3"
+    },
+    "replace": {
+        "npm-asset/jquery": "*",
+        "npm-asset/jqueryui": "*",
+        "npm-asset/backbone": "*",
+        "npm-asset/underscore": "*"
+    },
+    "extra": {
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/slick": [
+                "npm-asset/slick-carousel",
+                "bower-asset/slick-carousel"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "asset-library-overrides": {
+            "swiftmailer/swiftmailer": {
+                "exclude": true,
+                "key": "swiftmailer_lib",
+                "directory_name": "swiftmailer",
+                "download": {
+                    "type": "get",
+                    "url": "https://github.com/swiftmailer/swiftmailer/archive/v5.4.8.zip"
+                }
+            },
+            "npm-asset/slick-carousel": {
+                "key": "slick_lib",
+                "directory_name": "slick",
+                "download": {
+                    "type": "get",
+                    "url": "https://github.com/kenwheeler/slick/archive/1.6.0.zip"
+                }
+            },
+            "npm-asset/dropzone": {
+                "download": {
+                    "type": "get",
+                    "url": "https://github.com/enyo/dropzone/archive/v4.2.0.zip"
+                }
+            },
+            "npm-asset/blazy": {
+                "download": {
+                    "type": "get",
+                    "url": "https://github.com/dinbror/blazy/archive/1.8.2.zip"
+                }
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\presto\\": "src"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_media
+    - system
+  theme:
+    - presto_theme
+id: presto_theme_socialsharingblock
+theme: presto_theme
+region: content
+weight: 0
+provider: null
+plugin: social_sharing_block
+settings:
+  id: social_sharing_block
+  label: 'Share this'
+  provider: social_media
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/products/*\r\n/articles/*"
+    negate: false
+    context_mapping: {  }

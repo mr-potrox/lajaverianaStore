@@ -1,0 +1,13 @@
+name: Presto Component Block
+type: module
+description: Provides a block type that allows the embedding of paragraph components.
+# core: 8.x
+package: Presto (Configuration)
+dependencies:
+  - presto:presto_components
+
+# Information added by Drupal.org packaging script on 2018-08-28
+version: '8.x-2.2'
+core: '8.x'
+project: 'presto'
+datestamp: 1535435284

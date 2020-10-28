@@ -1,0 +1,78 @@
+name: Presto
+# core: 8.x
+type: profile
+description: 'A magical Drupal distribution.'
+# version: '8.x-2.x'
+distribution:
+  name: Presto
+dependencies:
+  # Core
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - comment
+  - config
+  - contact
+  - contextual
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - entity_browser
+  - entity_embed
+  - field_ui
+  - file
+  - help
+  - image
+  - layout_discovery
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - quickedit
+  - rdf
+  - shortcut
+  - search
+  - taxonomy
+  - toolbar
+  - views
+  - views_ui
+  # Contrib
+  - admin_toolbar
+  - dropzonejs
+  - dropzonejs_eb_widget
+  - ds
+  - focal_point
+  - google_analytics
+  - layout_discovery
+  - media
+  - media_entity_slideshow
+  - metatag
+  - paragraphs
+  - pathauto
+  - redirect
+  - slick
+  - slick_media
+  - social_media
+  - simple_sitemap
+  - token
+  - video_embed_field
+  - view_mode_selector
+  - views_bulk_operations
+  - social_media_links
+  # Custom
+  - presto_components
+  - presto_contact
+  - presto_component_block
+themes:
+  - bartik
+  - seven
+
+# Information added by Drupal.org packaging script on 2018-08-28
+version: '8.x-2.2'
+core: '8.x'
+project: 'presto'
+datestamp: 1535435284

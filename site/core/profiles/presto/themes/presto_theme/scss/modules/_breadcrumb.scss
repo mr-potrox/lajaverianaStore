@@ -1,0 +1,25 @@
+ol.breadcrumb {
+  background: transparent;
+  margin-top: 10px;
+
+  > li {
+    font-family: $headingFont;
+
+    a {
+      font-family: $headingFont;
+      color: $linkColor;
+
+      &:hover {
+        color: $linkColorHover;
+        text-decoration: none;
+      }
+    }
+
+    + li {
+      &::before {
+        content: '::';
+        padding: 0 .2em;
+      }
+    }
+  }
+}
